@@ -1,2 +1,2 @@
-# FTeste
-Repositório de testes para o frontend
+# Frontend
+Repositório de testes para o frontend.
