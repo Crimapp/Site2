@@ -1,0 +1,49 @@
+.mdl-layout__header{
+  background-color: #2f4257;
+}
+
+.mdl-mini-footer{
+  background-color: #212121;
+}
+
+.mdl-button--raised.mdl-button--colored{
+  background-color: #2f4257;
+}
+
+.mdl-button--raised.mdl-button--colored:hover{
+  background-color: #2f4257;
+}
+
+.btn-add{
+  position: fixed;
+  bottom: 110px;
+  right: 10px;
+  z-index: 2;
+}
+
+#map{
+  height: 410px;
+  width: 100%;
+}
+
+.index{
+  background: none;
+  box-shadow: none;
+}
+
+.index-bg{
+  background: url("../img/bg.jpg");
+  filter: blur(5px);
+  background-color: rgba(0,0,0,0.5);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+/*
+.mdl-grid{
+  height: 100%;
+}
+
+.page-content{
+  height: 95%;
+}*/
