@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
     <head>
         <meta charset="utf-8"/>
         <!-- Material Design Lite -->
         <script src="./src/js/material.min.js"></script>
+        
         <link rel="stylesheet" href="./src/css/material.min.css">
         <!-- Custom styles -->
         <link rel="stylesheet" href="./src/css/style.css">
+        <script src="./src/js/functions.js"></script>
         <!-- Material Design icon font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-        <title>Crimapp | Página Inicial</title>
+        <title>Crimapp | App</title>
     </head>
-
-    <body style="background: #232f3d;">
+    <body>
         <!-- Always shows a header, even in smaller screens. -->
-        <div class="index-bg"></div>
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-            <header class="mdl-layout__header index">
+            <header id="header" class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
                     <span class="mdl-layout-title">Crimapp</span>
@@ -44,22 +43,19 @@
             </div>
             <main class="mdl-layout__content">
                 <div class="page-content">
+                    <!-- Here the maps will displayed -->
                     <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--12-col">
-                            <style>
-                                h2{
-                                    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-                                    color: #eee;
-                                    margin-top: 100px;
-                                }
-                            </style>
-                            <center><h2>Em breve.</h2></center>
+                            <?php
+                                // inclui mapa na página
+                                include('./src/system/map.php');
+                            ?>
                         </div>
                     </div>
                 </div>
             </main>
 
-            <footer class="mdl-mini-footer">
+            <footer id="footer" class="mdl-mini-footer">
                 <div class="mdl-mini-footer__left-section">
                     <div class="mdl-logo">Copyright &copy 2017 Crimapp.</div>
                 </div>
