@@ -1,19 +1,34 @@
+/*
+ * BG color for header
+ */
 .mdl-layout__header{
   background-color: #2f4257;
 }
 
+/*
+ * BG color for footer
+ */
 .mdl-mini-footer{
   background-color: #212121;
 }
 
+/*
+ * BG color for main buttons
+ */
 .mdl-button--raised.mdl-button--colored{
   background-color: #2f4257;
 }
 
+/*
+ * BG color for main buttons
+ */
 .mdl-button--raised.mdl-button--colored:hover{
   background-color: #2f4257;
 }
 
+/*
+ * Button that add new marker on map
+ */
 .btn-add{
   position: fixed;
   bottom: 110px;
@@ -21,16 +36,32 @@
   z-index: 2;
 }
 
+/*
+ * Container for Google maps
+ */
 #map{
-  height: 410px;
+  height: 100%;
   width: 100%;
 }
 
+/*
+ * Conteiner for Google maps and associed content
+ */
+#mapcont{
+  height: 100%;
+}
+
+/*
+ * Conteiner for index page
+ */
 .index{
   background: none;
   box-shadow: none;
 }
 
+/*
+ * Conteiner for index BG
+ */
 .index-bg{
   background: url("../img/bg.jpg");
   filter: blur(5px);
@@ -39,11 +70,41 @@
   width: 100%;
   position: absolute;
 }
+
 /*
-.mdl-grid{
-  height: 100%;
+ * Custom styles for dialog element
+ */
+.mdl-dialog{
+  margin-top: -80px;
+  width: 30%;
+  min-width: 257px;
 }
 
-.page-content{
-  height: 95%;
-}*/
+/*
+ * Custom styles for radio-button element
+ */
+.mdl-radio__label{
+  margin-right: 10px;
+}
+
+/*
+ * Custom styles for dialog title
+ */
+.mdl-dialog__title{
+  font-size: 2.3rem;
+}
+
+/*
+ * Custom styles for top menu itens
+ */
+.mdl-navigation__link{
+  font-size: 16px;
+}
+
+.mdl-layout-title{
+  margin-left: -55px;
+}
+
+.mdl-textfield{
+  width: 100%;
+}
