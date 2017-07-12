@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Material Design Lite -->
+        <script src="./src/js/material.min.js"></script>
+        <link rel="stylesheet" href="./src/css/material.min.css">
+        <!-- Polyfill for Dialogs elements -->
+        <script src="./src/js/dialog-polyfill.js"></script>
+        <link rel="stylesheet" href="./src/css/dialog-polyfill.css">
+        <!-- Custom styles -->
+        <link rel="stylesheet" href="./src/css/style.css">
+        <script src="./src/js/functions.js"></script>
+        <!-- Material Design icon font -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>Crimapp | App</title>
+    </head>
+    <body>
+        <!-- Always shows a header, even in smaller screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header id="header" class="mdl-layout__header">
+                <div class="mdl-layout__header-row">
+                    <!-- Title -->
+                    <span class="mdl-layout-title">Crimapp</span>
+                    <!-- Add spacer, to align navigation to the right -->
+                    <div class="mdl-layout-spacer"></div>
+                    <!-- Navigation. We hide it in small screens. -->
+                    <nav class="mdl-navigation mdl-layout--large-screen-only" style="margin-right: -10px;">
+                        <a class="mdl-navigation__link" href="./index.html">Início</a>
+                    </nav>
+                    <!-- Right aligned menu below button -->
+                    <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin-right: -10px;">
+                        <i class="material-icons">more_vert</i>
+                    </button>
+                    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+                        <li class="mdl-menu__item">Login</li>
+                    </ul>
+                </div>
+            </header>
+            <div class="mdl-layout__drawer mdl-layout--small-screen-only">
+                <span class="mdl-layout-title">Crimapp</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="./app.html">Início</a>
+                    <a class="mdl-navigation__link" href="./faq.html">F.A.Q.</a>
+                    <a class="mdl-navigation__link" href="./contato.html">Contato</a>
+                    <a class="mdl-navigation__link" href="./sobre.html">Sobre</a>
+                </nav>
+            </div>
+            <main class="mdl-layout__content">
+                <style>
+                    .page-content{
+                        height: 100%;
+                    }
+                </style>
+                <div class="page-content">
+                    <!-- Here the maps will displayed -->
+                    <div id="mapcont">
+                        <div id="message" class="mdl-js-snackbar mdl-snackbar">
+                            <div class="mdl-snackbar__text"></div>
+                            <button class="mdl-snackbar__action" type="button"></button>
+                        </div>
+                        <div id="map"></div>
+                        <script src="./src/js/map.js"></script>
+                        <script src="./src/js/markerclusterer.js"></script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVX8fGU83a5IAZrhaR2P1gnLf2W-L9KTM&callback=initMap"></script>
+                        <dialog class="mdl-dialog">
+                            <h4 id="d-title" class="mdl-dialog__title"></h4>
+                            <div class="mdl-dialog__content">
+                                <form method="dialog">
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+                                        <input type="radio" id="option-1" class="mdl-radio__button" name="tipo" value="Roubo" checked>
+                                        <span class="mdl-radio__label">Roubo</span>
+                                    </label>
+                                    <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+                                        <input type="radio" id="option-2" class="mdl-radio__button" name="tipo" value="Outro">
+                                        <span class="mdl-radio__label">Outro</span>
+                                    </label>
+                                    <div class="mdl-textfield mdl-js-textfield">
+                                        <textarea class="mdl-textfield__input" type="text" rows= "3" id="desc" ></textarea>
+                                        <label class="mdl-textfield__label" for="desc">Descrição...</label>
+                                    </div>
+                                    <div class="mdl-dialog__actions">
+                                        <button type="submit" class="mdl-button" value="yes">OK</button>
+                                        <button type="submit" class="mdl-button" value="no">Cancelar</button>
+                                        <button type="submit" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" value="del">
+                                            <i class="material-icons">delete_forever</i>
+                                        </button>
+                                    </div>
+                                    
+                                </form>
+                            </div>
+                        </dialog>
+                    </div>
+                </div>
+            </main>
+            <footer id="footer" class="mdl-mini-footer mdl-layout--large-screen-only">
+                <div class="mdl-mini-footer__left-section">
+                    <div class="mdl-logo">Copyright &copy 2017 Crimapp.</div>
+                </div>
+                <div class="mdl-mini-footer__right-section">    
+                    <ul class="mdl-mini-footer__link-list">
+                        <li><a href="./sobre.html">Sobre</a></li>
+                        <li><a href="./contato.html">Contato</a></li>
+                        <li><a href="./faq.html">F.A.Q.</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>
