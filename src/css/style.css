@@ -10,6 +10,7 @@
  */
 .mdl-mini-footer{
   background-color: #212121;
+  height: 36px;
 }
 
 /*
@@ -101,10 +102,14 @@
   font-size: 16px;
 }
 
-.mdl-layout-title{
+.title{
   margin-left: -55px;
 }
 
 .mdl-textfield{
   width: 100%;
+}
+
+.mdl-layout__content{
+  height: 100%;
 }
