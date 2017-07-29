@@ -113,3 +113,9 @@
 .mdl-layout__content{
   height: 100%;
 }
+.page{
+  display: none;
+}
+#mainPage{
+  display: block;
+}

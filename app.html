@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="./src/css/dialog-polyfill.css">
         <!-- Custom styles -->
         <link rel="stylesheet" href="./src/css/style.css">
-        <script src="./src/js/functions.js"></script>
+
         <!-- Material Design icon font -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <!-- Facebook api link -->
@@ -47,17 +47,14 @@
             </div>
         </dialog>
         <!-- Always shows a header, even in smaller screens. -->
-        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <div id="app-header" class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header id="header" class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
                     <!-- Title -->
-                    <span class="mdl-layout-title title">Crimapp</span>
+                    <span class="mdl-layout-title title page-changer" data-page="mainPage">Crimapp</span>
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
                     <!-- Navigation. We hide it in small screens. -->
-                    <nav class="mdl-navigation mdl-layout--large-screen-only">
-                        <a class="mdl-navigation__link" href="./index">Início</a>
-                    </nav>
                     <!-- Right aligned menu below button -->
                     <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon" style="margin-right: -15px;">
                         <i class="material-icons">more_vert</i>
@@ -68,12 +65,12 @@
                 </div>
             </header>
             <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-                <span class="mdl-layout-title">Crimapp</span>
+                <span class="mdl-layout-title">CrimApp</span>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="./app">Início</a>
-                    <a class="mdl-navigation__link" href="./faq">F.A.Q.</a>
-                    <a class="mdl-navigation__link" href="./contato">Contato</a>
-                    <a class="mdl-navigation__link" href="./sobre">Sobre</a>
+                    <a class="mdl-navigation__link page-changer" data-page="mainPage">Início</a>
+                    <a class="mdl-navigation__link page-changer" data-page="faqPage">F.A.Q.</a>
+                    <a class="mdl-navigation__link page-changer" data-page="contatoPage">Contato</a>
+                    <a class="mdl-navigation__link page-changer" data-page="sobrePage">Sobre</a>
                 </nav>
             </div>
             <main class="mdl-layout__content">
@@ -82,7 +79,7 @@
                         height: 100%;
                     }
                 </style>
-                <div class="page-content">
+                <div id="mainPage" class="page-content page">
                     <!-- Here the maps will displayed -->
                     <div id="mapcont">
                         <div id="message" class="mdl-js-snackbar mdl-snackbar">
@@ -92,8 +89,20 @@
                         <div id="map"></div>
                         <script src="./src/js/map.js"></script>
                         <script src="./src/js/markerclusterer.js"></script>
-                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh5exHDSyip3RkIbVbuqXK3Msra0srhE0&callback=initMap"></script>
+                        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVX8fGU83a5IAZrhaR2P1gnLf2W-L9KTM&callback=initMap"></script>
                     </div>
+                </div>
+                <div id="sobrePage" class="page-content page">
+                    <!-- Here the maps will displayed -->
+                    <p>Pagina sobre</p>
+                </div>
+                <div id="contatoPage" class="page-content page">
+                    <!-- Here the maps will displayed -->
+                    <p>Pagina contato</p>
+                </div>
+                <div id="faqPage" class="page-content page">
+                    <!-- Here the maps will displayed -->
+                    <p>Pagina faq</p>
                 </div>
             </main>
             <footer id="footer" class="mdl-mini-footer mdl-layout--large-screen-only">
@@ -102,12 +111,14 @@
                 </div>
                 <div class="mdl-mini-footer__right-section">    
                     <ul class="mdl-mini-footer__link-list">
-                        <li><a href="./sobre">Sobre</a></li>
-                        <li><a href="./contato">Contato</a></li>
-                        <li><a href="./faq">F.A.Q.</a></li>
+                        <li><a class="page-changer" data-page="sobrePage">Sobre</a></li>
+                        <li><a class="page-changer" data-page="contatoPage">Contato</a></li>
+                        <li><a class="page-changer" data-page="faqPage">F.A.Q.</a></li>
                     </ul>
                 </div>
             </footer>
         </div>
+        <script src="./src/js/functions.js"></script>
+        <script src="./src/js/events.js"></script>
     </body>
 </html>
