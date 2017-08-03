@@ -77,7 +77,8 @@
  */
 .mdl-dialog{
   margin-top: -80px;
-  width: 30%;
+  width: 80%;
+  height: 300px;
   min-width: 257px;
 }
 
@@ -118,4 +119,17 @@
 }
 #mainPage{
   display: block;
+}
+
+#crimeHolder{
+  display: none;
+}
+#logoutButton{
+  display: none;
+}
+#addDiv{
+  display: none;
+}
+#delCrime{
+  display: none;
 }

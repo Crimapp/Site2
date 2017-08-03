@@ -1,28 +1,36 @@
 /**
  * Created by Turox on 7/10/2017.
  */
-console.log('FB api');
-var id;
 var btnlogin;
+var userId = null;
+var accessToken = null;
+
 
 function userConnected(){
     FB.api('/me', function(response){
+        //document.getElementById("login").innerHTML = response.name;
         document.getElementById("login").innerHTML = response.name;
+        document.getElementById('logoutButton').style.display = "block";
+        document.getElementById('addDiv').style.display = "block";
     });
+}
+function userLogout(response) {
+    if (response == 'OK') {
+        userId = null;
+        accessToken = null;
+        document.getElementById('login').innerHTML = 'Login';
+        document.getElementById('logoutButton').style.display = "none";
+        document.getElementById('addDiv').style.display = "none";
+    }
 }
 
 function statusChangedCallback(response) {
-    //console.log(response.authResponse.accessToken)
-	id = response.authResponse.userID;
+    console.log('statusChangedCallback');
     if(response.status == 'connected'){
-        btnlogin.onclick = function () {console.log("logado");};
+        accessToken = response.authResponse.accessToken;
+        userId = response.authResponse.userID;
+        //btnlogin.onclick = function () {console.log("logado");};
         userConnected();
-    }
-    else if(response.status == 'not_authorized'){
-        alert("faça login");
-    }
-    else{
-        alert("faça login");
     }
 }
 
@@ -34,14 +42,6 @@ window.fbAsyncInit = function () {
         version: 'v2.9'
     });
     FB.AppEvents.logPageView();
-    btnlogin = document.getElementById('login')
-    btnlogin.onclick = function () {
-        console.log('Login clicked');
-        FB.login(function (response) {
-            statusChangedCallback(response);
-        }, {scope: 'public_profile'});
-        
-    };
     FB.getLoginStatus(function (response) {
         statusChangedCallback(response);
     });
@@ -55,6 +55,6 @@ window.fbAsyncInit = function () {
     }
     js = d.createElement(s);
     js.id = id;
-    js.src = "//connect.facebook.net/en_US/sdk.js";
+    js.src = "https://connect.facebook.net/en_US/sdk.js";
     fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));

@@ -2,6 +2,7 @@
  * Created by Turox on 7/29/2017.
  */
 window.onload = function(){
+    snackbarContainer = document.querySelector('#message');
     windowResize();
     getLocation();
     google.maps.event.trigger(map, 'resize')
@@ -12,7 +13,6 @@ window.onload = function(){
     }
     titulo = document.querySelector("#d-title");
     titulo.innerHTML = "Adicionar novo";
-    snackbarContainer = document.querySelector('#message');
 
     //Page changers
     let pagechangers = document.getElementsByClassName('page-changer');
@@ -25,9 +25,42 @@ window.onload = function(){
         }
     }
 
+    document.getElementById('logoutButton').onclick = function(){
+        FB.logout(userLogout);
+    };
+
     detectswipe('app-header', function(){
 
-    })
+    });
+
+    document.getElementById('crimeForm').onsubmit = function(e){
+        e.preventDefault();
+        aud('add');
+    };
+    document.getElementById('cancelCrime').onclick = function(e){
+        e.preventDefault();
+        document.getElementById('crimeForm').reset();
+        document.getElementById('crimeFormHolder').close();
+    }
+
+    document.getElementById('login').onclick = function () {
+        if(!isLogged()) {
+            FB.login(function (response) {
+                statusChangedCallback(response);
+            }, {scope: 'public_profile'});
+        }
+    };
+
+    document.getElementById('delCrime').onclick = function(e){
+        e.preventDefault();
+        aud('del');
+    }
+
+    document.getElementById('crimeFormHolder').addEventListener('close', function(){
+        document.getElementById('crimeForm').reset();
+        document.getElementById('delCrime').style.display = 'none';
+    });
 };
+
 
 //page changers

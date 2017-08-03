@@ -3,29 +3,40 @@ let dialog;
 let titulo;
 let snackbarContainer;
 
-
-
-
-
-
+function isLogged(){
+    return userId && accessToken;
+}
+function timeConverter(UNIX_timestamp){
+    var a = new Date(UNIX_timestamp);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    var year = a.getFullYear();
+    var month = months[a.getMonth()];
+    var date = a.getDate();
+    var hour = a.getHours();
+    var min = a.getMinutes();
+    var sec = a.getSeconds();
+    var time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec ;
+    return time;
+}
 function windowResize(){
     if(!document.querySelector(".is-small-screen")){
         document.querySelector(".title").style = "margin-left: -55px;";
-        document.getElementById("demo-menu-lower-right").style = "margin-right: -15px;";
+        //document.getElementById("demo-menu-lower-right").style = "margin-right: -15px;";
     }
     else{
         document.querySelector(".title").style = "margin-left: 0px;";
-        document.getElementById("demo-menu-lower-right").style = "margin-right: 0px;";
+        //document.getElementById("demo-menu-lower-right").style = "margin-right: 0px;";
     }
 }
 
 // HTML5 geolocation
 function getLocation(){
+    snackbarContainer.MaterialSnackbar.showSnackbar({message: 'Adquirindo sua localização...'});
     if (navigator.geolocation){
         navigator.geolocation.getCurrentPosition(changeLocation);
     }
     else{
-        alert("O seu navegador não suporta Geolocalização."); // muda isso depois
+        snackbarContainer.MaterialSnackbar.showSnackbar({message: 'Não foi possivel obter sua localização'});
     }
 }
 
@@ -42,7 +53,7 @@ function changePage(page_str){
 
 
     page.style.display = 'block';
-    if(page_str === 'result')
+    if(page_str === 'mainPage')
         google.maps.event.trigger(map, 'resize');
 }
 
@@ -81,8 +92,8 @@ function detectswipe(el,func) {
             else direc = "u";
         }
 
-        if (direc != "") {
-            if(typeof func == 'function') func(el,direc);
+        if (direc !== "") {
+            if(typeof func === 'function') func(el,direc);
         }
         direc = "";
     },false);
