@@ -22,7 +22,7 @@ var markers = [];
 var markerCluster;
 
 // Store the server address and port
-var server = "http://192.168.0.103:3000";
+var server = "http://159.203.141.244:3001";
 
 function addControl(nome, radi, func, icon, title) {
 
