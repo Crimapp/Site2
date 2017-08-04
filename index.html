@@ -37,19 +37,23 @@
                 <label class="mdl-textfield__label" for="tipo">Tipo de ocorrência</label>
             </div>
             <div id="descHolder" class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <textarea placeholder="Descrição..." class="mdl-textfield__input" type="text" rows="3" id="desc"></textarea>
+                <textarea placeholder="Descrição..." class="mdl-textfield__input" type="text" rows="3"
+                          id="desc"></textarea>
                 <label class="mdl-textfield__label" for="desc">Descrição</label>
             </div>
 
             <div class="mdl-dialog__actions">
-                <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" value="yes" style="color: green">
+                <button type="submit" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" value="yes"
+                        style="color: green">
                     <i class="material-icons">done</i>
                 </button>
-                <button id="delCrime" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" value="del" style="color: red">
+                <button id="delCrime" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" value="del"
+                        style="color: red">
                     <i class="material-icons">delete_forever</i>
                 </button>
 
-                <button id="cancelCrime" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab" value="no">
+                <button id="cancelCrime" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab"
+                        value="no">
                     <i class="material-icons">close</i>
                 </button>
             </div>
@@ -110,7 +114,7 @@
     </div>
     <main class="mdl-layout__content">
         <style>
-            .page-content{
+            .page-content {
                 height: 100%;
             }
         </style>
@@ -121,116 +125,129 @@
                 <div id="map"></div>
                 <script src="./src/js/map.js"></script>
                 <script src="./src/js/markerclusterer.js"></script>
-                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVX8fGU83a5IAZrhaR2P1gnLf2W-L9KTM&callback=initMap"></script>
+                <script async defer
+                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVX8fGU83a5IAZrhaR2P1gnLf2W-L9KTM&callback=initMap"></script>
             </div>
             <div id="crimeHolder">
 
             </div>
         </div>
         <div id="sobrePage" class="page-content page">
-                <div class="page-content">
-                    <div class="mdl-grid about-fs">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <article class="mdl-article" style="text-align: center;">
-                                <img src="./src/img/logo1.png" style="min-width: 265px;width: 30.4%; margin: 10px 0px 20px 0px;">
-                                <p class="mdl-cell-content">
-                                    Quem nos dias atuais, não vive preocupado com a sua própria segurança? Todos, não é verdade?<br>
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                    <div class="mdl-grid about-fs">
-                        <div class="mdl-cell mdl-cell--4-col">
-                            <center><img class="about-img" src="./src/img/map.png" width="100px" height="100px"></center>
-                            Crimapp é um projeto novo, que surgiu com intuito de mapear ocorrências de crimes, prevenindo as pessoas
-                            de possíveis locais, propensos a roubos, furtos e outros tipos de crimes.
-                        </div>
-                        <div class="mdl-cell mdl-cell--4-col">
-                            <center><img class="about-img" src="./src/img/crime.png" width="100px" height="100px"></center>
-                            Caso você seja uma vítima de algum tipo de crime poderá nos ajudar a manter
-                            o aplicativo sempre atualizado, marcando o ponto da ocorrência no mapa, e assim
-                            previnindo pessoas que irão passar ou que moram próximo a localidade.
-                        </div>
-                        <div class="mdl-cell mdl-cell--4-col">
-                            <center><img class="about-img" src="./src/img/student.png" width="100px" height="100px"></center>
-                            Construido por estudantes entusiastas do Bacharelado em Ciência da Computação
-                            da UNIFAL-MG, tentando através da prevenção melhorar a segurança de muitos
-                            cidadãos, contribuindo diretamente com as políticas públicas de segurança.
-                        </div>
-                    </div>
-                    <div class="mdl-grid about-fs">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <center>Já que o governo é incapaz de garantir nossa proteção, então vamos nós mesmos amenizar um pouco a situação.</center>
-                        </div>
+                <div class="mdl-grid about-fs">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <article class="mdl-article" style="text-align: center;">
+                            <img src="./src/img/logo1.png"
+                                 style="min-width: 265px;width: 30.4%; margin: 10px 0px 20px 0px;">
+                            <p class="mdl-cell-content">
+                                Quem nos dias atuais, não vive preocupado com a sua própria segurança? Todos, não é
+                                verdade?<br>
+                            </p>
+                        </article>
                     </div>
                 </div>
-        </div>
+                <div class="mdl-grid about-fs">
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <center><img class="about-img" src="./src/img/map.png" width="100px" height="100px"></center>
+                        Crimapp é um projeto novo, que surgiu com intuito de mapear ocorrências de crimes, prevenindo as
+                        pessoas
+                        de possíveis locais, propensos a roubos, furtos e outros tipos de crimes.
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <center><img class="about-img" src="./src/img/crime.png" width="100px" height="100px"></center>
+                        Caso você seja uma vítima de algum tipo de crime poderá nos ajudar a manter
+                        o aplicativo sempre atualizado, marcando o ponto da ocorrência no mapa, e assim
+                        previnindo pessoas que irão passar ou que moram próximo a localidade.
+                    </div>
+                    <div class="mdl-cell mdl-cell--4-col">
+                        <center><img class="about-img" src="./src/img/student.png" width="100px" height="100px">
+                        </center>
+                        Construido por estudantes entusiastas do Bacharelado em Ciência da Computação
+                        da UNIFAL-MG, tentando através da prevenção melhorar a segurança de muitos
+                        cidadãos, contribuindo diretamente com as políticas públicas de segurança.
+                    </div>
+                </div>
+                <div class="mdl-grid about-fs">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <center>Já que o governo é incapaz de garantir nossa proteção, então vamos nós mesmos amenizar
+                            um pouco a situação.
+                        </center>
+                    </div>
+                </div>
+            </div>
         <div id="contatoPage" class="page-content page">
-                <div class="page-content">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--6-col" id="cpc">
-                            <h3>Fale Conosco!</h3>
-                            <p class="mdl-cell-content">Para esclarecer dúvidas, enviar sugestões ou críticas, preencha os campos abaixo.</p>
-                            <form autocomplete="off" id="formulario" method="post" >
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="cfn" name="nome" required>
-                                    <label class="mdl-textfield__label" for="cfn">Nome...</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input class="mdl-textfield__input" type="text" id="cfe" name="email" required>
-                                    <label class="mdl-textfield__label" for="cfe">Email...</label>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                                    <input list="lista" class="mdl-textfield__input" type="text" id="cfa" name="assunto" required>
-                                    <label class="mdl-textfield__label" for="cfa">Assunto...</label>
-                                    <datalist id="lista">
-                                        <option value="Dúvida">
-                                        <option value="Crítica">
-                                        <option value="Sugestões">
-                                        <option value="Outro">
-                                    </datalist>
-                                </div>
-                                <div class="mdl-textfield mdl-js-textfield">
-                                    <textarea class="mdl-textfield__input" type="text" rows= "3" id="cfm" name="mensagem" required></textarea>
-                                    <label class="mdl-textfield__label" for="cfm">Mensagem...</label>
-                                </div>
-                                <div style="margin-bottom: 20px;">
-                                    <div class="g-recaptcha" data-sitekey="6LfpfysUAAAAAD0Xnjpvf0zB84fVMPKVep4ajbnX"></div>
-                                </div>
-                                <button type="button" onclick="send()" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
-                                    Enviar
-                                </button>
-                            </form>
-                        </div>
-                        <div class="mdl-cell mdl-cell--6-col mdl-cell--hide-tablet mdl-cell--hide-phone">
-                            <style>
-                                #ic{
-                                    width: 100%;
-                                }
-                            </style>
-                            <img id="ic" class="" src="./src/img/contact1.png">
-                        </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col" id="cpc">
+                        <h3>Fale Conosco!</h3>
+                        <p class="mdl-cell-content">Para esclarecer dúvidas, enviar sugestões ou críticas, preencha os
+                            campos abaixo.</p>
+                        <form autocomplete="off" id="formulario" method="post">
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="cfn" name="nome" required>
+                                <label class="mdl-textfield__label" for="cfn">Nome...</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input class="mdl-textfield__input" type="text" id="cfe" name="email" required>
+                                <label class="mdl-textfield__label" for="cfe">Email...</label>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                <input list="lista" class="mdl-textfield__input" type="text" id="cfa" name="assunto"
+                                       required>
+                                <label class="mdl-textfield__label" for="cfa">Assunto...</label>
+                                <datalist id="lista">
+                                    <option value="Dúvida">
+                                    <option value="Crítica">
+                                    <option value="Sugestões">
+                                    <option value="Outro">
+                                </datalist>
+                            </div>
+                            <div class="mdl-textfield mdl-js-textfield">
+                                <textarea class="mdl-textfield__input" type="text" rows="3" id="cfm" name="mensagem"
+                                          required></textarea>
+                                <label class="mdl-textfield__label" for="cfm">Mensagem...</label>
+                            </div>
+                            <div style="margin-bottom: 20px;">
+                                <div class="g-recaptcha" data-sitekey="6LfpfysUAAAAAD0Xnjpvf0zB84fVMPKVep4ajbnX"></div>
+                            </div>
+                            <button type="button" onclick="send()"
+                                    class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-js-ripple-effect">
+                                Enviar
+                            </button>
+                        </form>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--hide-tablet mdl-cell--hide-phone">
+                        <style>
+                            #ic {
+                                width: 100%;
+                            }
+                        </style>
+                        <img id="ic" class="" src="./src/img/contact1.png">
                     </div>
                 </div>
-        </div>
+            </div>
         <div id="faqPage" class="page-content page">
-                <div class="page-content">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--12-col">
-                            <h3 class="mdl-cell-title">Dúvidas mais frequentes</h3>
-                            <article class="mdl-article">
-                                <ol>
-                                    <h5><li>Por quê preciso fazer login para usar o app?</li></h5>
-                                    <p>asuxgig</p>
-                                    <h5><li>Minhas informações ficam anônimas?</li></h5>
-                                    <p>asuxgig</p>
-                                    <h5><li>Quantos pontos posso adicionar ao mapa?</li></h5>
-                                    <p>asuxgig</p>
-                                    <h5><li>Por quê não posso adicionar mais pontos?</li></h5>
-                                    <p>asuxgig</p>
-                                </ol>
-                            </article>
-                        </div>
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                        <h3 class="mdl-cell-title">Dúvidas mais frequentes</h3>
+                        <article class="mdl-article">
+                            <ol>
+                                <h5>
+                                    <li>Por quê preciso fazer login para usar o app?</li>
+                                </h5>
+                                <p>asuxgig</p>
+                                <h5>
+                                    <li>Minhas informações ficam anônimas?</li>
+                                </h5>
+                                <p>asuxgig</p>
+                                <h5>
+                                    <li>Quantos pontos posso adicionar ao mapa?</li>
+                                </h5>
+                                <p>asuxgig</p>
+                                <h5>
+                                    <li>Por quê não posso adicionar mais pontos?</li>
+                                </h5>
+                                <p>asuxgig</p>
+                            </ol>
+                        </article>
                     </div>
                 </div>
         </div>
