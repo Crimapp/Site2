@@ -10,7 +10,7 @@ function userConnected(){
     FB.api('/me', function(response){
         //document.getElementById("login").innerHTML = response.name;
         document.getElementById("login").innerHTML = response.name;
-        document.getElementById('logoutButton').style.display = "block";
+        //document.getElementById('logoutButton').style.display = "block";
         document.getElementById('addDiv').style.display = "block";
     });
 }
